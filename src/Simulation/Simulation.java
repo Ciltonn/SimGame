@@ -24,10 +24,10 @@ public class Simulation {
     private final SpawnEntities spawnEntities = new SpawnEntities();
     private int turnCount = 0;
 
-    public void start2Simulation(int stepsSimulation) {
+    public void startSimulation(int stepsSimulation) {
         new Thread(this::userInput).start();
 
-        startSimulation(stepsSimulation);
+        pauseSimulation(stepsSimulation);
     }
 
     private void userInput(){
@@ -48,7 +48,7 @@ public class Simulation {
         }
     }
 
-    private void startSimulation(int stepsSimulation) {
+    private void pauseSimulation(int stepsSimulation) {
 
         factory.setEntities(location);
 
